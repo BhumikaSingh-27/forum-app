@@ -1,7 +1,7 @@
 export const initialValue = {
   posts: [],
-  username:"",
-  name:""
+  username: "",
+  name: "",
 };
 
 export const reducerFn = (state, action) => {
@@ -9,11 +9,30 @@ export const reducerFn = (state, action) => {
     case "GET_DATA": {
       return { ...state, posts: action.payload };
     }
-    case "GET_USERNAME":{
-        return {...state, username: action.payload}
+    case "GET_USERNAME": {
+      return { ...state, username: action.payload };
     }
-    case "GET_NAME":{
-        return {...state, username: action.payload}
+    case "GET_NAME": {
+      return { ...state, username: action.payload };
+    }
+    case "UPVOTE": {
+      const updatedPosts = state.posts.map((post) =>
+        post.postId === action.payload
+          ? { ...post, upvotes: post.upvotes + 1 }
+          : post
+      );
+      
+      return { ...state, posts: updatedPosts };
+    }
+
+    case "DOWNVOTE":{
+        const updatedPosts = state.posts.map((post) =>
+        post.postId === action.payload
+          ? { ...post, downvotes: post.downvotes + 1 }
+          : post
+      );
+      console.log("updated", updatedPosts);
+      return { ...state, posts: updatedPosts };
     }
     default:
       return state;

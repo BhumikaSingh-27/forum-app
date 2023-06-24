@@ -8,23 +8,30 @@ import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import { DataContext } from "../context/DataContext";
 
 const Post = ({ data }) => {
-    const {dispatch} = useContext(DataContext)
+  const { dispatch } = useContext(DataContext);
 
-    const d = new Date(data.createdAt)
+  const d = new Date(data.createdAt);
   return (
     <div className="post">
       <div className="post-main">
         <div>
           <div className="vote-icons">
-            <div onClick={()=>dispatch({type:"UPVOTE",payload:data.psotId})}><ArrowDropUpOutlinedIcon fontSize="large" /></div>
+            <div
+              onClick={() => dispatch({ type: "UPVOTE", payload: data.postId })}
+            >
+              <ArrowDropUpOutlinedIcon fontSize="large" />
+            </div>
             <p>{data.upvotes - data.downvotes}</p>
-            <ArrowDropDownOutlinedIcon fontSize="large" />
+            <div onClick={() => dispatch({ type: "DOWNVOTE", payload: data.postId })}><ArrowDropDownOutlinedIcon fontSize="large" /> </div>
           </div>
         </div>
         <div className="post-container">
           <div className="title">
             {" "}
-            <div className="image"></div> <div>posted by @{data.username} - {d.getMinutes()}m</div>
+            <div className="image"></div>{" "}
+            <div>
+              posted by @{data.username} - {d.getMinutes()}m
+            </div>
           </div>
           <div>
             <h2>{data.post}</h2>
