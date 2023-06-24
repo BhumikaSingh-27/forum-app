@@ -2,7 +2,7 @@ export const initialValue = {
   posts: [],
   username: "",
   name: "",
-  filter: "",
+  filter: "latest",
 };
 
 export const reducerFn = (state, action) => {
