@@ -1,3 +1,107 @@
+.home-container {
+    margin-top: 2rem;
+}
+
+.sort-section {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin-top: 2rem;
+}
+
+select {
+    width: 100%;
+    font-size: large;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+}
+
+select option {
+    padding: 1rem;
+}
+
+.comment-section {
+    background-color: white;
+    display: flex;
+    gap: 1rem
+}
+
+.comment-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    padding: 1rem;
+    background-color: white;
+    width: 40rem;
+    margin-top: 1rem;
+}
+
+.vote-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding-left: 0.5rem;
+}
+
+.vote-icons p {
+    padding-left: 0.5rem;
+}
+
+.post-main {
+    display: flex;
+    gap: 1rem
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+.title {
+    display: flex;
+    gap: 1rem;
+}
+
+.image {
+    background-color: lightgray;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+
+}
+
+.post-container p {
+    width: 100%;
+}
+
+.tags {
+    display: flex;
+    gap: 1rem;
+}
+
+.tags span {
+    display: inline-block;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.1rem 0.5rem;
+    border-radius: 2rem;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.post-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* side bar style */
 .sidebar {
     position: sticky;
     top: 0;
@@ -26,7 +130,7 @@
 
 .img {
     border-radius: 50%;
-    width: 50px;
+    width: 10 0px;
     height: 50px;
     background-color: white;
 }
@@ -34,6 +138,7 @@
 .profile {
     display: flex;
     gap: 1rem;
+    width: 100%;
 
 }
 

@@ -23,10 +23,13 @@ const Sidebar = () => {
         </div>
         <div className="footer">
           <div className="profile">
-            <div className="img"></div>
-            <div><h4>Tanay Pratap</h4>
-            <p>@tanaypratap</p></div>
-            
+            <div className="image img">
+              <img src="" alt="" />
+            </div>
+            <div>
+              <h4>Tanay Pratap</h4>
+              <p>@tanaypratap</p>
+            </div>
           </div>
         </div>
       </div>
