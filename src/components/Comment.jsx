@@ -1,5 +1,8 @@
 import React from "react";
 import "./style.css";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
+import BookmarkBorderRoundedIcon from "@mui/icons-material/BookmarkBorderRounded";
 
 const Comment = ({ data }) => {
   const d = new Date(data.comments.createdAt);
@@ -15,7 +18,13 @@ const Comment = ({ data }) => {
             </div>
             <div>replying to @{data?.username}</div>
             <div>
-              <p>{user.comment}</p>
+              <h4>{user.comment}</h4>
+            </div>
+            <hr />
+            <div className="post-icons">
+              <FavoriteBorderIcon />
+              <ShareRoundedIcon />
+              <BookmarkBorderRoundedIcon />
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ export const initialValue = {
   posts: [],
   username: "",
   name: "",
+  filter: "",
 };
 
 export const reducerFn = (state, action) => {
@@ -21,12 +22,14 @@ export const reducerFn = (state, action) => {
           ? { ...post, upvotes: post.upvotes + 1 }
           : post
       );
-      
+
       return { ...state, posts: updatedPosts };
     }
-
-    case "DOWNVOTE":{
-        const updatedPosts = state.posts.map((post) =>
+    case "FILTER": {
+      return { ...state, filter: action.payload };
+    }
+    case "DOWNVOTE": {
+      const updatedPosts = state.posts.map((post) =>
         post.postId === action.payload
           ? { ...post, downvotes: post.downvotes + 1 }
           : post

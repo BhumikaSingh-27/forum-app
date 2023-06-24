@@ -24,14 +24,20 @@ select option {
 .comment-section {
     background-color: white;
     display: flex;
-    gap: 1rem
+    gap: 1rem;
+    padding:1rem;
+   
 }
 
 .comment-data {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
+.comment-data h4{
+    padding: 0.5rem 0rem;
+}
 .post {
     padding: 1rem;
     background-color: white;
