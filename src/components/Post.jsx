@@ -1,28 +1,44 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 import ArrowDropUpOutlinedIcon from "@mui/icons-material/ArrowDropUpOutlined";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 import BookmarkBorderRoundedIcon from "@mui/icons-material/BookmarkBorderRounded";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { DataContext } from "../context/DataContext";
+import { NavLink } from "react-router-dom";
 
 const Post = ({ data }) => {
   const { dispatch } = useContext(DataContext);
+  const [bookmark, setBookmark] = useState(false);
 
-  const d = new Date(data.createdAt);
+  const d = new Date(data?.createdAt);
   return (
-    <div className="post">
+    <div className="post" key={data.postId}>
       <div className="post-main">
         <div>
           <div className="vote-icons">
             <div
               onClick={() => dispatch({ type: "UPVOTE", payload: data.postId })}
             >
-              <ArrowDropUpOutlinedIcon fontSize="large" />
+              <ArrowDropUpOutlinedIcon fontSize="large" fontWeight="bold" />
             </div>
-            <p>{data.upvotes - data.downvotes}</p>
-            <div onClick={() => dispatch({ type: "DOWNVOTE", payload: data.postId })}><ArrowDropDownOutlinedIcon fontSize="large" /> </div>
+            <p className="name">
+              {" "}
+              {data?.downvotes > data?.upvotes ? (
+                <b>{data?.upvotes - data?.downvotes}</b>
+              ) : (
+                <b>{data?.upvotes - data?.downvotes}</b>
+              )}
+            </p>
+            <div
+              onClick={() =>
+                dispatch({ type: "DOWNVOTE", payload: data.postId })
+              }
+            >
+              <ArrowDropDownOutlinedIcon fontSize="large" />{" "}
+            </div>
           </div>
         </div>
         <div className="post-container">
@@ -30,7 +46,8 @@ const Post = ({ data }) => {
             {" "}
             <div className="image"></div>{" "}
             <div>
-              posted by @{data.username} - {d.getMinutes()}m
+              posted by <span className="name">@{data.username}</span> -{" "}
+              {d.getMinutes()}m
             </div>
           </div>
           <div>
@@ -47,8 +64,15 @@ const Post = ({ data }) => {
           </div>
           <hr />
           <div className="post-icons">
-            <ChatBubbleOutlineRoundedIcon />
-            <BookmarkBorderRoundedIcon />
+            <NavLink to={`/${data.postId}`}>
+              {" "}
+              <div>
+                <ChatBubbleOutlineRoundedIcon />
+              </div>{" "}
+            </NavLink>
+            <div onClick={() => setBookmark(!bookmark)}>
+              {bookmark ? <BookmarkIcon /> : <BookmarkBorderRoundedIcon />}
+            </div>
             <ShareRoundedIcon />
           </div>
         </div>

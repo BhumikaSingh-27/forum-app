@@ -146,3 +146,19 @@ select option {
 
     margin-top: auto;
 }
+
+.name {
+    color: var(--primary-color)
+}
+
+.vote-icons div:hover {
+    cursor: pointer;
+}
+
+.post-icons div:hover{
+    cursor: pointer;
+}
+
+.landing{
+    display: flex;
+}

@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DataContextProvider } from "./context/DataContext";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <DataContextProvider>
-      <App />
-    </DataContextProvider>
+    <BrowserRouter>
+      <DataContextProvider>
+        <App />
+      </DataContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

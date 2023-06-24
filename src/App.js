@@ -1,21 +1,16 @@
-import logo from "./logo.svg";
+import Home from "../src/pages/Home";
 import "./App.css";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Home from "../src/pages/Home";
-import Comment from "./components/Comment";
-import Sort  from "./components/Sort";
+import PostLanding from "./pages/PostLanding";
+import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Header />
-      <div className="section">
-        <Sidebar />
-        <Home />
-        {/* <Comment /> */}
-        <Sort />
-      </div>
-   
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/:id" element={<PostLanding />}></Route>
+      </Routes>
     </div>
   );
 }
