@@ -25,8 +25,8 @@ select option {
     background-color: white;
     display: flex;
     gap: 1rem;
-    padding:1rem;
-   
+    padding: 1rem;
+
 }
 
 .comment-data {
@@ -35,9 +35,10 @@ select option {
     flex-grow: 1;
 }
 
-.comment-data h4{
+.comment-data h4 {
     padding: 0.5rem 0rem;
 }
+
 .post {
     padding: 1rem;
     background-color: white;
@@ -161,10 +162,14 @@ select option {
     cursor: pointer;
 }
 
-.post-icons div:hover{
+.post-icons div:hover {
     cursor: pointer;
 }
 
-.landing{
+.landing {
     display: flex;
+}
+
+.bottom-nav {
+    display: none;
 }
