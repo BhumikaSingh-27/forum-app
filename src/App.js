@@ -1,5 +1,6 @@
 import Home from "../src/pages/Home";
 import "./App.css";
+import "../src/components/small.css";
 import Header from "./components/Header";
 import PostLanding from "./pages/PostLanding";
 import { Route, Routes } from "react-router-dom";

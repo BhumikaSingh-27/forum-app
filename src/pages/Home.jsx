@@ -19,6 +19,7 @@ const Home = () => {
     <div>
       <div className="section">
         <Sidebar />
+        
         <div className="home-container">
           <h2>Latest Post</h2>
           <div>

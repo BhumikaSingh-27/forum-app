@@ -8,6 +8,24 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 const Sidebar = () => {
   return (
     <div>
+      <div>
+        <div className="nav-bottom">
+        <div className="small-nav">
+          <div>
+            <HomeOutlinedIcon />
+          </div>
+          <div>
+            <RocketOutlinedIcon />
+          </div>
+          <div>
+            <BookmarkBorderOutlinedIcon />
+          </div>
+          <div>
+            <AccountCircleOutlinedIcon />
+          </div>
+        </div>
+        </div>
+      </div>
       <div className="sidebar">
         <div className="side-box">
           <HomeOutlinedIcon fontSize="large" /> <h5>Home</h5>
