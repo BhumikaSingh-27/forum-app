@@ -18,7 +18,15 @@ const Home = () => {
   return (
     <div>
       <div className="section">
+<<<<<<< Updated upstream
         <Sidebar />
+=======
+        <div className="section-area">
+          {" "}
+          <Sidebar />
+        </div>
+
+>>>>>>> Stashed changes
         <div className="home-container">
           <h2>Latest Post</h2>
           <div>

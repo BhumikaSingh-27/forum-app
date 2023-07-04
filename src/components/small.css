@@ -1,0 +1,64 @@
+@media screen and (max-width:480px) {
+    :root {
+        font-size: 50%;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%
+    }
+
+    body {
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    nav {
+        width: 100%
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .bottom-nav {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .small-nav {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-area {
+        justify-self: flex-end;
+    }
+
+    .nav-bottom {
+        position: absolute;
+        min-width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+}
