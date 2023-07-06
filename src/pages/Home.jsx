@@ -4,7 +4,7 @@ import { DataContext } from "../context/DataContext";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Sort from "../components/Sort";
-
+import "../components/small.css";
 const Home = () => {
   const { state } = useContext(DataContext);
 
@@ -18,15 +18,11 @@ const Home = () => {
   return (
     <div>
       <div className="section">
-<<<<<<< Updated upstream
-        <Sidebar />
-=======
         <div className="section-area">
           {" "}
           <Sidebar />
         </div>
 
->>>>>>> Stashed changes
         <div className="home-container">
           <h2>Latest Post</h2>
           <div>
