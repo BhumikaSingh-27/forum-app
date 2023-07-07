@@ -39,8 +39,8 @@
     }
 
     .nav-bottom {
-        position: sticky;
-        min-width: 100%;
+        position: fixed;
+        /* min-width: 100%; */
         bottom: 0;
         left: 0;
         right: 0;
